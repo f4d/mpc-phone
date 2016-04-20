@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Laravel\Lumen\Routing\Controller as BaseController;
+
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Services_Twilio_Twiml;
 
 class Controller extends BaseController
 {
@@ -21,20 +25,21 @@ class Controller extends BaseController
 	{
 		//?Digits=9342390942
 		//?id=9342390942
-	  //$msg_id = $_GET[id];
 	  $msg_id = $request->input('id');
 	  //$msg_id = '9342390942';
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 	  get_headers($url.$msg_id);
-		//return $url.$msg_id;  	
+		  	
 		
 	  $response = new Services_Twilio_Twiml;
 
 		$say = 'Got it, thanks!';
+		/*
 		$response->say(
 		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
 		);
-		
-		return $response;
+		*/
+		//return $response;
+		return $url.$msg_id;
 	}
 }
