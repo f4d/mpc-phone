@@ -20,23 +20,17 @@ $app->get('/', 'Controller@home');
 $app->get('/ivr/welcome', ['as' => 'ivr-welcome', function () {
 	return ivrWelcome();
 }]);
-$app->get('/ivr/response', 'Controller@ivrResponse');
-
-function home() {
-  $msg_id = '9342390942';
-  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
-  get_headers($url.$msg_id);
-	return "Welcome, nerds!!!";
-}
+//$app->get('/ivr/response', 'Controller@ivrResponse');
 
 function ivrWelcome()
 {
 	$response = new Services_Twilio_Twiml;
+	/*
 	$gather = $response->gather(
 	    ['numDigits' => 10,
 	    'action' => 'https://mpc-phone.herokuapp.com/ivr/response'
 	    // 'action' => route('ivr-response', [], false)]
-	);
+	); */
 	$say = 'Welcome to the motherfucking mothership. ';
 	$say .= 'Please enter your 10 digit pet eye dee or owner eye dee.';
 	$response->say(
