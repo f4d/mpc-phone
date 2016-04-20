@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 use Laravel\Lumen\Routing\Controller as BaseController;
-
-namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Services_Twilio_Twiml;
 
 class Controller extends BaseController
