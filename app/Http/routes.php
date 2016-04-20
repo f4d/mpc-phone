@@ -20,7 +20,7 @@ $app->get('/', 'Controller@home');
 $app->get('/ivr/welcome', ['as' => 'ivr-welcome', function () {
 	return ivrWelcome();
 }]);
-//$app->get('/ivr/response', 'Controller@ivrResponse');
+$app->get('/ivr/response', 'Controller@ivrResponse');
 
 function ivrWelcome()
 {
