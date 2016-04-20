@@ -43,9 +43,10 @@ class Controller extends BaseController
 	  $url .= "&from=$from";
 	  get_headers($url);
 	  $response = new Services_Twilio_Twiml;
-		$say = 'Got it, thanks!';
+		//$say = 'Got it, thanks!';
+		
 		$response->say(
-		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
+		    $from, ['voice' => 'Alice', 'language' => 'en-GB']
 		);		
 		return $response;
   }	
