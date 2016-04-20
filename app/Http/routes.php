@@ -22,6 +22,9 @@ $app->get('ivr/response', ['as' => 'ivr-response', function () use ($app) {
 }]);
 
 function home($app) {
+  $msg_id = '9342390942';
+  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
+  get_headers($url.$msg_id);
 	return $app->version()." Welcome, nerds!!!";
 }
 
