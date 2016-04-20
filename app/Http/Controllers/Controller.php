@@ -31,12 +31,12 @@ class Controller extends BaseController
 	  $response = new Services_Twilio_Twiml;
 
 		$say = 'Got it, thanks!';
-		/*
+		
 		$response->say(
 		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
 		);
-		*/
-		//return $response;
-		return $url.$msg_id;
+		
+		return $response;
+		//return $url.$msg_id;
 	}
 }
