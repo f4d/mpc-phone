@@ -48,7 +48,9 @@ function ivrWelcome()
 
 function ivrResponse(Request $request)
 {
-  $getId = $request->input('Digits');
+  $msg_id = $request->input('Digits');
+  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
+  get_headers($url.$msg_id);
 	$response->say(
 	    "You entered $getId",
 	    ['voice' => 'Alice', 'language' => 'en-GB']
