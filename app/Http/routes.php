@@ -19,5 +19,5 @@ $app->get('/', function () use ($app) {
 config(['app.debug' => true]);
 $app->get('/', 'Controller@home');
 $app->get('/ivr/welcome', ['as' => 'ivr-welcome', 'uses' => 'Controller@ivrWelcome']);
-$app->get('/ivr/response', ['as' => 'ivr-response', 'uses' => 'Controller@ivrResponse']);
 $app->get('/moo', ['as' => 'moo', 'uses' => 'Controller@moo']);
+$app->post('/ivr/response', ['as' => 'ivr-response', 'uses' => 'Controller@ivrResponse']);
