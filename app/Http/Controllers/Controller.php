@@ -14,7 +14,8 @@ class Controller extends BaseController
 	  get_headers($url.$msg_id);
 		return "Welcome, nerds!!!";  	
   }
-  function ivrResponse(Request $request)
+  //public function ivrResponse(Request $request)
+  public function ivrResponse()
 	{
 		//?Digits=9342390942
 	  //$msg_id = $request->input('Digits');
@@ -23,7 +24,7 @@ class Controller extends BaseController
 	  get_headers($url.$msg_id);
 	  $response = new Services_Twilio_Twiml;
 		$response->say(
-		    "You entered $getId",
+		    "Got it, thanks!",
 		    ['voice' => 'Alice', 'language' => 'en-GB']
 		);
 		return $response;
