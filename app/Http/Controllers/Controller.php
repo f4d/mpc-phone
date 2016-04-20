@@ -16,9 +16,9 @@ class Controller extends BaseController
 		return "Welcome, nerds!!!";  	
   }
   public function ivrResponse(Request $request) {
-	  //$msg_id = $request->input('Digits');
-	  //$url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
-	  //get_headers($url.$msg_id);
+	  $msg_id = $request->input('Digits');
+	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
+	  get_headers($url.$msg_id);
 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
@@ -34,7 +34,7 @@ class Controller extends BaseController
 		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
 		);		
 		$gather = $response->gather(
-		    ['numDigits' => 1,
+		    ['numDigits' => 10,
 		    //'action' => 'https://mpc-phone.herokuapp.com/ivr/response'
 		    'action' => route('ivr-response', [], false)]
 		); 
