@@ -17,7 +17,7 @@ $app->get('/', function () use ($app) {
 $app->get('ivr/welcome', ['as' => 'ivr-welcome', function () {
 	return ivrWelcome();
 }]);
-$app->get('ivr/reponse', ['as' => 'ivr-response', function () use ($app) {
+$app->get('ivr/response', ['as' => 'ivr-response', function () use ($app) {
 	return ivrResponse($app);
 }]);
 
