@@ -14,18 +14,20 @@ class Controller extends BaseController
 	  get_headers($url.$msg_id);
 		return "Welcome, nerds!!!";  	
   }
-  //public function ivrResponse(Request $request)
+  public function ivrResponse(Request $request) {
+
+  }
   public function moo(Request $request)
 	{
 		//?Digits=9342390942
 		//?id=9342390942
 	  //$msg_id = $_GET[id];
 	  $msg_id = $request->input('id');
-	  $msg_id = '9342390942';
+	  //$msg_id = '9342390942';
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 	  get_headers($url.$msg_id);
-		return $url.$msg_id;  	
-		/*
+		//return $url.$msg_id;  	
+		
 	  $response = new Services_Twilio_Twiml;
 
 		$say = 'Got it, thanks!';
@@ -33,6 +35,6 @@ class Controller extends BaseController
 		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
 		);
 		
-		return $response;*/
+		return $response;
 	}
 }
