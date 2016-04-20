@@ -15,18 +15,22 @@ class Controller extends BaseController
 		return "Welcome, nerds!!!";  	
   }
   //public function ivrResponse(Request $request)
-  public function ivrResponse()
+  public function moo()
 	{
 		//?Digits=9342390942
 	  //$msg_id = $request->input('Digits');
 	  $msg_id = '9342390942';
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 	  get_headers($url.$msg_id);
+		return "moo!!!";  	
+		/*
 	  $response = new Services_Twilio_Twiml;
+
+		$say = 'Got it, thanks!';
 		$response->say(
-		    "Got it, thanks!",
-		    ['voice' => 'Alice', 'language' => 'en-GB']
+		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
 		);
-		return $response;
+		
+		return $response;*/
 	}
 }
