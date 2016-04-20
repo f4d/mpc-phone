@@ -15,7 +15,7 @@ class Controller extends BaseController
 		return "Welcome, nerds!!!";  	
   }
   //public function ivrResponse(Request $request)
-  public function moo()
+  public function moo(Request $request)
 	{
 		//?Digits=9342390942
 	  //$msg_id = $request->input('Digits');
