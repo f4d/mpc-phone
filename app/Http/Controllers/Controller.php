@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
-use Request;
+use Illuminate\Http\Request;
 
 class Controller extends BaseController
 {
