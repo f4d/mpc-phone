@@ -35,6 +35,7 @@ class Controller extends BaseController
 		*/
 		return $response;
 	}
+
   public function ivrResponse(Request $request) {
 	  $lookup = $request->input('Digits');
 	  $from = $request->input('From');
@@ -43,13 +44,20 @@ class Controller extends BaseController
 	  $url .= "&from=$from";
 	  get_headers($url);
 	  $response = new Services_Twilio_Twiml;
-		//$say = 'Got it, thanks!';
-		
+		$say = 'Got it, thanks!';
 		$response->say(
-		    $from, ['voice' => 'Alice', 'language' => 'en-GB']
+		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
 		);		
 		return $response;
   }	
+	 public function smsResponse(Request $request) {
+	  $lookup = $request->input('Body');
+	  $from = $request->input('From');
+	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/sms-notification';
+	  $url .= "?lookup=$lookup";
+	  $url .= "&from=$from";
+	  get_headers($url);
+  }
   public function moo(Request $request)
 	{
 		//?Digits=9342390942
