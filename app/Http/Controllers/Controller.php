@@ -13,7 +13,8 @@ class Controller extends BaseController
   {
 	  $msg_id = '9342390942';
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
-	  get_headers($url.$msg_id);
+	  $gh = get_headers($url.$msg_id);
+ 	  Log::info('test page response: '.$gh);
 		return "Welcome, nerds!!!";  	
   }
 
@@ -70,7 +71,7 @@ class Controller extends BaseController
 		//?id=9342390942
 	  $msg_id = $request->input('id');
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
-	  get_headers($url.$msg_id);
+		$gh = get_headers($url.$msg_id);
 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
