@@ -20,14 +20,15 @@ class Controller extends BaseController
 	{
 		$response = new Services_Twilio_Twiml;
 		$say = 'Please enter your 10 digit pet eye dee or owner eye dee.';
-		//$response->say(
-		//    $say, ['voice' => 'Alice', 'language' => 'en-GB']
+		//
 		//);
-		$response->play('',['digits' => '0');
+		//$response->play('',['digits' => '0');
 		$gather = $response->gather(
 		    ['numDigits' => 10,
 		    'action' => route('ivr-response', [], false)]
 		); 
+		$gather->say(
+			$say, ['voice' => 'Alice', 'language' => 'en-US']
 		/*
 		$gather->play(
 		    'http://howtodocs.s3.amazonaws.com/et-phone.mp3',
