@@ -28,7 +28,7 @@ class Controller extends BaseController
 		    'action' => route('ivr-response', [], false)]
 		); 
 		$gather->say(
-			$say, ['voice' => 'Alice', 'language' => 'en-US']
+			$say, ['voice' => 'Alice', 'language' => 'en-US'];
 		/*
 		$gather->play(
 		    'http://howtodocs.s3.amazonaws.com/et-phone.mp3',
