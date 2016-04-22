@@ -61,6 +61,8 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
+ 	  $log = 'test page response: '.$gh[0];
+ 	  error_log($log);
   }
   public function moo(Request $request)
 	{
@@ -69,6 +71,8 @@ class Controller extends BaseController
 	  $msg_id = $request->input('id');
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 		$gh = get_headers($url.$msg_id);
+ 	  $log = 'test page response: '.$gh[0];
+ 	  error_log($log);
 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
