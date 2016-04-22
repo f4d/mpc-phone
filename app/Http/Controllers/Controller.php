@@ -23,12 +23,12 @@ class Controller extends BaseController
 		$response->say(
 			$say, ['voice' => 'Alice', 'language' => 'en-US'];
 		);
-		//$response->play('',['digits' => '0');
 		$gather = $response->gather(
 		    ['numDigits' => 10,
 		    'action' => route('ivr-response', [], false)]
 		); 
 		/*
+		$response->play('',['digits' => '0');
 		$gather->play(
 		    'http://howtodocs.s3.amazonaws.com/et-phone.mp3',
 		    ['loop' => 3]
