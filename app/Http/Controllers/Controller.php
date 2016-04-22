@@ -14,7 +14,9 @@ class Controller extends BaseController
 	  $msg_id = '9342390942';
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 	  $gh = get_headers($url.$msg_id);
- 	  error_log('test page response: '.$gh);
+ 	  //$log = 'test page response: '.$gh;
+ 	  //error_log($log, 3, "/mypath/php.log");
+ 	  error_log("this is a test");
 		return "Welcome, nerds!!!";  	
   }
 
@@ -46,8 +48,6 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
-	  Log::useFiles('php://stderr');
-	  Log::info('IVR HTTP response: '.$gh);
 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
@@ -62,8 +62,6 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
-	  Log::useFiles('php://stderr');
-	  Log::info('SMS HTTP response: '.$gh);
   }
   public function moo(Request $request)
 	{
