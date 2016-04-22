@@ -16,6 +16,8 @@ $app->get('/', function () use ($app) {
   return home($app);
 });
 */
+use Log;
+
 config(['app.debug' => true]);
 Log::useFiles('php://stderr');
 $app->get('/', 'Controller@home');
