@@ -22,7 +22,8 @@ class Controller extends BaseController
 		$say = 'Please enter your 10 digit pet eye dee or owner eye dee.';
 		$response->say(
 		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
-		);		
+		);
+		$response->play('',['digits' => '0');
 		$gather = $response->gather(
 		    ['numDigits' => 10,
 		    'action' => route('ivr-response', [], false)]
@@ -50,7 +51,7 @@ class Controller extends BaseController
 		);		
 		return $response;
   }	
-	 public function smsResponse(Request $request) {
+	public function smsResponse(Request $request) {
 	  $lookup = $request->input('Body');
 	  $from = $request->input('From');
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/sms-notification';
