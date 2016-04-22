@@ -16,10 +16,8 @@ $app->get('/', function () use ($app) {
   return home($app);
 });
 */
-use Log;
 
 config(['app.debug' => true]);
-Log::useFiles('php://stderr');
 $app->get('/', 'Controller@home');
 $app->get('/ivr/welcome', ['as' => 'ivr-welcome', 'uses' => 'Controller@ivrWelcome']);
 $app->post('/ivr/response', ['as' => 'ivr-response', 'uses' => 'Controller@ivrResponse']);

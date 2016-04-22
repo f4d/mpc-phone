@@ -45,6 +45,7 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
+	  Log::useFiles('php://stderr');
 	  Log::info('IVR HTTP response: '.$gh);
 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
@@ -60,7 +61,8 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
-	  Log::info('IVR HTTP response: '.$gh);
+	  Log::useFiles('php://stderr');
+	  Log::info('SMS HTTP response: '.$gh);
   }
   public function moo(Request $request)
 	{
