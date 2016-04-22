@@ -47,7 +47,9 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
-	  $response = new Services_Twilio_Twiml;
+ 	  $log = 'IVR WP Response: '.$gh[0];
+ 	  error_log($log);
+ 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
 		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
@@ -61,7 +63,7 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
- 	  $log = 'test page response: '.$gh[0];
+ 	  $log = 'SMS WP Response: '.$gh[0];
  	  error_log($log);
   }
   public function moo(Request $request)
