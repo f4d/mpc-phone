@@ -21,7 +21,7 @@ class Controller extends BaseController
 		$response = new Services_Twilio_Twiml;
 		$say = 'Please enter your 10 digit pet eye dee or owner eye dee.';
 		$response->say(
-			$say, ['voice' => 'Alice', 'language' => 'en-US'];
+			$say, ['voice' => 'Alice', 'language' => 'en-US']
 		);
 		$gather = $response->gather(
 		    ['numDigits' => 10,
