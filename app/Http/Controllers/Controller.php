@@ -14,10 +14,9 @@ class Controller extends BaseController
 	  $msg_id = '9342390942';
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 	  $gh = get_headers($url.$msg_id);
- 	  //$log = 'test page response: '.$gh;
- 	  //error_log($log, 3, "/mypath/php.log");
- 	  error_log("this is a test");
-		return "Welcome, nerds!!!";  	
+ 	  $log = 'test page response: '.$gh;
+ 	  error_log($log);
+		return $log;  	
   }
 
 	public function ivrWelcome()
