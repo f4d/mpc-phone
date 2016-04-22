@@ -5,6 +5,7 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Services_Twilio_Twiml;
+use Log;
 
 class Controller extends BaseController
 {
@@ -43,7 +44,8 @@ class Controller extends BaseController
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification';
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
-	  get_headers($url);
+	  $gh = get_headers($url);
+	  Log::info('IVR HTTP response: '.$gh);
 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
@@ -57,7 +59,8 @@ class Controller extends BaseController
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/sms-notification';
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
-	  get_headers($url);
+	  $gh = get_headers($url);
+	  Log::info('IVR HTTP response: '.$gh);
   }
   public function moo(Request $request)
 	{
