@@ -14,7 +14,7 @@ class Controller extends BaseController
 	  $msg_id = '9342390942';
 	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 	  $gh = get_headers($url.$msg_id);
- 	  $log = 'test page response: '.$gh;
+ 	  $log = 'test page response: '.$gh[0];
  	  error_log($log);
 		return $log;  	
   }
