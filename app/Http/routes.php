@@ -17,7 +17,7 @@ $app->get('/', function () use ($app) {
 });
 */
 
-config(['app.debug' => true]);
+//config(['app.debug' => false]);
 $app->get('/', 'Controller@home');
 $app->get('/ivr/welcome', ['as' => 'ivr-welcome', 'uses' => 'Controller@ivrWelcome']);
 $app->post('/ivr/response', ['as' => 'ivr-response', 'uses' => 'Controller@ivrResponse']);
