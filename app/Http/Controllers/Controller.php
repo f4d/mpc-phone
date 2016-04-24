@@ -12,7 +12,7 @@ class Controller extends BaseController
   public function home() 
   {
 	  $msg_id = '9342390942';
-	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
+	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 	  $gh = get_headers($url.$msg_id);
  	  $log = 'test page response: '.$gh[0];
  	  error_log($log);
@@ -43,7 +43,7 @@ class Controller extends BaseController
   public function ivrResponse(Request $request) {
 	  $lookup = $request->input('Digits');
 	  $from = $request->input('From');
-	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification';
+	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification';
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
@@ -59,7 +59,7 @@ class Controller extends BaseController
 	public function smsResponse(Request $request) {
 	  $lookup = $request->input('Body');
 	  $from = $request->input('From');
-	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/sms-notification';
+	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/sms-notification';
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
@@ -71,7 +71,7 @@ class Controller extends BaseController
 		//?Digits=9342390942
 		//?id=9342390942
 	  $msg_id = $request->input('id');
-	  $url = 'http://petguardian.staging.wpengine.com/wp-json/petguardian/v1/ivr-notification?lookup=';
+	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification?lookup=';
 		$gh = get_headers($url.$msg_id);
  	  $log = 'test page response: '.$gh[0];
  	  error_log($log);
