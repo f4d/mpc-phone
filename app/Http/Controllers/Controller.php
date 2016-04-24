@@ -24,7 +24,7 @@ class Controller extends BaseController
 		$response = new Services_Twilio_Twiml;
 		$say = 'Please enter your 10 digit pet eye dee or owner eye dee.';
 		$response->say(
-			$say, ['voice' => 'woman', 'language' => 'en']
+			$say, ['voice' => 'alice', 'language' => 'en-US']
 		);
 		$gather = $response->gather(
 		    ['numDigits' => 10,
@@ -52,7 +52,7 @@ class Controller extends BaseController
  	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
-		    $say, ['voice' => 'woman', 'language' => 'en']
+		    $say, ['voice' => 'alice', 'language' => 'en-US']
 		);		
 		return $response;
   }	
@@ -78,7 +78,7 @@ class Controller extends BaseController
 	  $response = new Services_Twilio_Twiml;
 		$say = 'Got it, thanks!';
 		$response->say(
-		    $say, ['voice' => 'Alice', 'language' => 'en-GB']
+		    $say, ['voice' => 'alice', 'language' => 'en-US']
 		);		
 		return $response;
 	}
