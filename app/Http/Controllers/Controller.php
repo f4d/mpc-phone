@@ -22,10 +22,12 @@ class Controller extends BaseController
 	public function ivrWelcome()
 	{
 		$response = new Services_Twilio_Twiml;
+		/*
 		$say = 'Please enter your 10 digit pet eye dee or owner eye dee.';
 		$response->say(
 			$say, ['voice' => 'alice', 'language' => 'en-US']
-		);
+		);*/
+		$response->play("/mpc-welcome.mp3", []);
 		$gather = $response->gather(
 		    ['numDigits' => 10,
 		    'action' => route('ivr-response', [], false)]
@@ -50,10 +52,13 @@ class Controller extends BaseController
  	  $log = 'IVR WP Response: '.$gh[0];
  	  error_log($log);
  	  $response = new Services_Twilio_Twiml;
+		$response->play("/mpc-response.mp3", []);
+		/*
 		$say = 'Got it, thanks!';
 		$response->say(
 		    $say, ['voice' => 'alice', 'language' => 'en-US']
 		);		
+		*/
 		return $response;
   }	
 	public function smsResponse(Request $request) {
