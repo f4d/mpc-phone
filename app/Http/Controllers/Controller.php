@@ -11,12 +11,13 @@ class Controller extends BaseController
 {
   public function home() 
   {
-	  $msg_id = '9342390942';
-	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification?lookup=';
-	  $gh = get_headers($url.$msg_id);
- 	  $log = 'test page response: '.$gh[0];
- 	  error_log($log);
-		return $log;  	
+  	return 'hello';
+	  //$msg_id = '9342390942';
+	  //$url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification?lookup=';
+	  //$gh = get_headers($url.$msg_id);
+ 	  //$log = 'test page response: '.$gh[0];
+ 	  //error_log($log);
+		//return $log;  	
   }
 
 	public function ivrWelcome()
