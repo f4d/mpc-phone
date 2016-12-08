@@ -28,7 +28,7 @@ class Controller extends BaseController
 		$response->say(
 			$say, ['voice' => 'alice', 'language' => 'en-US']
 		);*/
-		$response->play("/mpc-welcome.mp3", []);
+		$response->play("https://mpc-phone.herokuapp.com/mpc-welcome.mp3", ['loop' => 1]);
 		$gather = $response->gather(
 		    ['numDigits' => 10,
 		    'action' => route('ivr-response', [], false)]
@@ -53,7 +53,7 @@ class Controller extends BaseController
  	  $log = 'IVR WP Response: '.$gh[0];
  	  error_log($log);
  	  $response = new Services_Twilio_Twiml;
-		$response->play("/mpc-response.mp3", []);
+		$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
 		/*
 		$say = 'Got it, thanks!';
 		$response->say(
