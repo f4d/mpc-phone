@@ -45,7 +45,8 @@ class Controller extends BaseController
 
   public function ivrResponse(Request $request) {
 	  $lookup = $request->input('Digits');
-	  //$from = $request->input('From');
+	  $from = $request->input('From');
+		return 'hollers';
 	  /*
 	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification';
 	  $url .= "?lookup=$lookup";
@@ -64,7 +65,6 @@ class Controller extends BaseController
  	  $response = new Services_Twilio_Twiml;
  		$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
 		return $response;
-		//return 'holler';
   }	
 	public function smsResponse(Request $request) {
 	  $lookup = $request->input('Body');
