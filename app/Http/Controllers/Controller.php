@@ -61,7 +61,7 @@ class Controller extends BaseController
 		    $say, ['voice' => 'alice', 'language' => 'en-US']
 		);		
 		*/
- 	  //$response = new Services_Twilio_Twiml;
+ 	  $response = new Services_Twilio_Twiml;
  		//$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
 		//return $response;
 		return 'hi';
