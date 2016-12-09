@@ -50,9 +50,9 @@ class Controller extends BaseController
 	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification';
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
-		return $url;
-		/*
 	  $gh = get_headers($url);
+		return $url." hey!";
+		/*
  	  $log = 'IVR WP Response: '.$gh[0];
  	  //error_log($log);
 		*/
