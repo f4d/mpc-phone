@@ -44,7 +44,7 @@ class Controller extends BaseController
 	}
 
   public function ivrResponse(Request $request) {
-	  //$lookup = $request->input('Digits');
+	  $lookup = $request->input('Digits');
 	  //$from = $request->input('From');
 	  /*
 	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification';
