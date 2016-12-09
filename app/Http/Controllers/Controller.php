@@ -43,13 +43,13 @@ class Controller extends BaseController
 		return $response;
 	}
 
-  public function ivrResponse(Request $request) {
+  public function (Request $request) {
 	  $lookup = $request->input('Digits');
 	  $from = $request->input('From');
 	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification';
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
-	  //$gh = get_headers($url);
+	  $gh = get_headers($url);
  	  //$log = 'IVR WP Response: '.$gh[0];
  	  //error_log($log);
  	  $response = new Services_Twilio_Twiml;

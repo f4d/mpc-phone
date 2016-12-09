@@ -21,6 +21,8 @@ $app->get('/', function () use ($app) {
 $app->get('/', 'Controller@home');
 $app->get('/ivr/welcome', ['as' => 'ivr-welcome', 'uses' => 'Controller@ivrWelcome']);
 $app->post('/ivr/response', ['as' => 'ivr-response', 'uses' => 'Controller@ivrResponse']);
+$app->get('/ivr/response', ['as' => 'ivr-response', 'uses' => 'Controller@ivrResponse']);
+
 $app->post('/sms', ['uses' => 'Controller@smsResponse']);
 
 
