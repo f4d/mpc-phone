@@ -62,9 +62,9 @@ class Controller extends BaseController
 		);		
 		*/
  	  $response = new Services_Twilio_Twiml;
- 		//$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
+ 		$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
 		//return $response;
-		return 'hi';
+		return 'hey';
   }	
 	public function smsResponse(Request $request) {
 	  $lookup = $request->input('Body');
