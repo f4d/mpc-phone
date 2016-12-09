@@ -28,11 +28,11 @@ class Controller extends BaseController
 		$response->say(
 			$say, ['voice' => 'alice', 'language' => 'en-US']
 		);*/
-		$response->play("https://mpc-phone.herokuapp.com/mpc-welcome.mp3", ['loop' => 1]);
 		$gather = $response->gather(
 		    ['numDigits' => 10,
 		    'action' => route('ivr-response', [], false)]
 		); 
+		$response->play("https://mpc-phone.herokuapp.com/mpc-welcome.mp3", ['loop' => 1]);
 		/*
 		$response->play('',['digits' => '0');
 		$gather->play(
