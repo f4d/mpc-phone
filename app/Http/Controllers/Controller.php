@@ -50,8 +50,8 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
- 	  //$log = 'IVR WP Response: '.$gh[0];
- 	  //error_log($log);
+ 	  $log = 'IVR WP Response: '.$gh[0];
+ 	  error_log($log);
  	  $response = new Services_Twilio_Twiml;
 		$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
 		/*
