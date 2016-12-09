@@ -23,16 +23,12 @@ class Controller extends BaseController
 	public function ivrWelcome()
 	{
 		$response = new Services_Twilio_Twiml;
-		/*
-		$say = 'Please enter your 10 digit pet eye dee or owner eye dee.';
-		$response->say(
-			$say, ['voice' => 'alice', 'language' => 'en-US']
-		);*/
+		$response->play("https://mpc-phone.herokuapp.com/mpc-welcome.mp3", ['loop' => 1]);
 		$gather = $response->gather(
 		    ['numDigits' => 10,
 		    'action' => route('ivr-response', [], false)]
 		); 
-		$response->play("https://mpc-phone.herokuapp.com/mpc-welcome.mp3", ['loop' => 1]);
+
 		/*
 		$response->play('',['digits' => '0');
 		$gather->play(
