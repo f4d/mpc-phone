@@ -44,8 +44,8 @@ class Controller extends BaseController
 	}
 
   public function ivrResponse(Request $request) {
-	  $lookup = $request->input('Digits');
-	  $from = $request->input('From');
+	  //$lookup = $request->input('Digits');
+	  //$from = $request->input('From');
 	  /*
 	  $url = 'http://www.millionpetchallenge.com/wp-json/petguardian/v1/ivr-notification';
 	  $url .= "?lookup=$lookup";
@@ -53,8 +53,6 @@ class Controller extends BaseController
 	  $gh = get_headers($url);
  	  $log = 'IVR WP Response: '.$gh[0];
  	  //error_log($log);
- 	  $response = new Services_Twilio_Twiml;
-		$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
 		*/
 
 		/*
@@ -63,7 +61,10 @@ class Controller extends BaseController
 		    $say, ['voice' => 'alice', 'language' => 'en-US']
 		);		
 		*/
-		return $response;
+ 	  //$response = new Services_Twilio_Twiml;
+ 		//$response->play("https://mpc-phone.herokuapp.com/mpc-response.mp3", ['loop' => 1]);
+		//return $response;
+		return 'hi';
   }	
 	public function smsResponse(Request $request) {
 	  $lookup = $request->input('Body');
