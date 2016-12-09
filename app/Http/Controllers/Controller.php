@@ -51,7 +51,6 @@ class Controller extends BaseController
 	  $url .= "?lookup=$lookup";
 	  $url .= "&from=$from";
 	  $gh = get_headers($url);
-		return $url." hey!";
 		/*
  	  $log = 'IVR WP Response: '.$gh[0];
  	  //error_log($log);
